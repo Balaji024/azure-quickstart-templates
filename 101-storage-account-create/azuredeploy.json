@@ -25,7 +25,7 @@
   },
   "variables": {
     "storageAccountName": "[concat('store', uniquestring(resourceGroup().id))]"
-    "storageAccountType": "[concat('store',uniquestring(resourceGroup().id))]" 
+    "storageAccountType": "[parameters('storageAccountType')]"
   },
   "resources": [
     {
