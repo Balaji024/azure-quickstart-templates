@@ -25,6 +25,7 @@
   },
   "variables": {
     "storageAccountName": "[concat('store', uniquestring(resourceGroup().id))]"
+    "storageAccountType": "[concat('store',uniquestring(resourceGroup().id))]" 
   },
   "resources": [
     {
@@ -33,7 +34,7 @@
       "location": "[parameters('location')]",
       "apiVersion": "2018-07-01",
       "sku": {
-        "name": "[parameters('storageAccountType')]"
+        "name": "[variables('storageAccountType')]"
       },
       "kind": "StorageV2",
       "properties": {}
@@ -44,5 +45,8 @@
       "type": "string",
       "value": "[variables('storageAccountName')]"
     }
+    "storageAccountType":{
+      "type": "string",
+      "value": "[variables('storageAccountType')]"
   }
 }
